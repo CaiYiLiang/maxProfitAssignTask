@@ -8,12 +8,19 @@
 - Fuel rate: Every car with 10% or less fuel, will be refueled to maximum capacity - $1.75/litre
 - Commission rate: Employee A - 11%, Employee B - 15%
 
-### Screen
+### Have fun
 
-![screen capture](./public/parkingSystem.png)
+#### Online
 
-### `yarn start`
+- Responsive layout has not been implemented yet
+- [Click to check the demo](https://max-profit-assign-task.vercel.app/)
+
+#### `yarn start`
 
 - Optional: change the `cars.json` || `employees.json` before start
 - Optional: uncomment the debug code to see the log
 - Run `yarn start`
+
+### Screen
+
+![screen capture](./public/parkingSystem.png)
