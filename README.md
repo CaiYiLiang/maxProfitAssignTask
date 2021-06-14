@@ -8,19 +8,23 @@
 - Fuel rate: Every car with 10% or less fuel, will be refueled to maximum capacity - $1.75/litre
 - Commission rate: Employee A - 11%, Employee B - 15%
 
-### Have fun
+### Solutions
 
-#### Online
+Two solutions on Parking Service System, one focuses on front end, another one is implemented with Deno, which is a new experiment on this powerful backend framework.
 
-- Responsive layout has not been implemented yet
-- [Click to check the demo](https://max-profit-assign-task.vercel.app/)
+- [Parking Service dashboard](https://max-profit-assign-task.vercel.app/): React, Typescript
+- [Parking Service CLI](https://github.com/CaiYiLiang/maxProfitAssignTask-deno): Deno, Typescript
 
-#### `yarn start`
+#### Parking Service dashboard
 
-- Optional: change the `cars.json` || `employees.json` before start
-- Optional: uncomment the debug code to see the log
-- Run `yarn start`
+- Play around with it
+  - [Click to check the demo](https://max-profit-assign-task.vercel.app/)
+  - Optionally change the `cars.json` || `employees.json` in `public` file. Run `yarn start`
+- TODO:
+  - Responsive design.
+  - Enable edit feature on `cars` and `employees`.
+  - Dynamic car list instead a fixed array.
 
-### Screen
+##### Screen
 
 ![screen capture](./public/parkingSystem.png)
