@@ -1,4 +1,4 @@
-import { Layout, Typography, List } from "antd";
+import { Typography, List } from "antd";
 import { CarTwoTone, SmileTwoTone } from "@ant-design/icons";
 import styled from "styled-components";
 import { ICar, ICarBillStatement } from "../screens/home.type";

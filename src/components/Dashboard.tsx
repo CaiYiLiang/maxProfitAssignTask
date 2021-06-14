@@ -1,5 +1,4 @@
-import { Layout, Typography, List } from "antd";
-import { FrownTwoTone } from "@ant-design/icons";
+import { Typography } from "antd";
 import styled from "styled-components";
 import { ICarBillStatement, IEmployee } from "../screens/home.type";
 import { CarList } from "./CarList";
