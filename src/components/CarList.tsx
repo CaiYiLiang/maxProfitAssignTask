@@ -49,7 +49,7 @@ export const CarList: React.FC<ICarList> = ({ cars }) => {
                         {`Car: ${item.licencePlate} - size: ${item.size}`}
                       </InfoItem>
                     )}
-                    {item.fuel && (
+                    {!isTaskAssignList && item.fuel && (
                       <InfoItem>
                         {`Fuel capacity: ${item.fuel.capacity} Current level: ${item.fuel.level}`}
                       </InfoItem>

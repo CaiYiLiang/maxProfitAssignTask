@@ -7,7 +7,12 @@
  *
  */
 
-import { ICar, IFuel, IEmployee } from "../screens/home.type";
+import {
+  ICar,
+  IFuel,
+  IEmployee,
+  ICarBillStatement,
+} from "../screens/home.type";
 
 export const getParkingRate = (carSize: string) => {
   if (carSize === "large") {
@@ -55,14 +60,10 @@ export const getCarServiceRate = (car: ICar) => {
 };
 
 export const getAllCarsBillStatement = (cars: Array<ICar>) => {
-  const allCarsBillStatement = cars.reduce((result: any, currentCar: ICar) => {
-    const [carServiceRate, fuelAdded] = getCarServiceRate(currentCar);
-    const { licencePlate, size } = currentCar;
-    return [
-      ...result,
-      { licencePlate, price: carServiceRate, fuelAdded, size },
-    ];
-  }, [] as ICar[]);
+  const allCarsBillStatement: Array<ICarBillStatement> = cars.map((car) => {
+    const [carServiceRate, fuelAdded] = getCarServiceRate(car);
+    return { ...car, price: carServiceRate, fuelAdded };
+  });
 
   // console.log("allCarsRate", allCarsBillStatement);
   return allCarsBillStatement;
@@ -95,7 +96,7 @@ export const carServiceAssigner = (
     let profit = 0;
     let startIdx = 0;
 
-    for (let i = 0; i < staffCapacity; i++) {
+    sortedEmployees.forEach((employeeInfo) => {
       const extraWorkloadRequired = extraWorkload > 0 ? 1 : 0;
       const endIdx =
         startIdx + assignWorkload + extraWorkloadRequired >=
@@ -103,16 +104,16 @@ export const carServiceAssigner = (
           ? sortedCarsBillStatement.length
           : startIdx + assignWorkload + extraWorkloadRequired;
       for (let k = startIdx; k < endIdx; k++) {
-        sortedCarsBillStatement[k].employee = sortedEmployees[i].employee;
+        sortedCarsBillStatement[k].employee = employeeInfo.employee;
         const deductedCommissionRate =
           sortedCarsBillStatement[k].price -
-          sortedCarsBillStatement[k].price * sortedEmployees[i].commission;
+          sortedCarsBillStatement[k].price * employeeInfo.commission;
         profit += deductedCommissionRate;
         // console.log("sortedCarsRate", sortedCarsBillStatement[k]);
       }
       extraWorkload--;
       startIdx = endIdx;
-    }
+    });
 
     // console.log("profit", parseFloat(profit.toFixed(2)));
     return [sortedCarsBillStatement, profit];

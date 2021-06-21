@@ -15,6 +15,13 @@ Two solutions on Parking Service System, one focuses on front end, another one i
 - [Parking Service dashboard](https://max-profit-assign-task.vercel.app/): React, Typescript
 - [Parking Service CLI](https://github.com/CaiYiLiang/maxProfitAssignTask-deno): Deno, Typescript
 
+#### New Change
+
+- Replaced `.reducer()` method with higher-order function `Array.map()` in `getAllCarsBillStatement`.
+  - `Array.reducer()` is for reduction usage. While it is a very powerful method, it's not always the easiest to read or grasp at a glance. An saying: `the simplest code is written sequentially`.
+- Replaced `for loop` with `Array.map()` in `carServiceAssigner`.
+- [Parking Service CLI](https://github.com/CaiYiLiang/maxProfitAssignTask-deno) - Enable the ability to log the argument data (cars, employees) and save as local data in JSON format. **Note:** Command updated.
+
 #### Parking Service dashboard
 
 - Play around with it
