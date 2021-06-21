@@ -24,7 +24,7 @@ const Cards = styled.div<CardProps>`
   width: 40%;
   border-radius: 5px;
   box-shadow: 0px 30px 40px -20px hsl(229deg 6% 66%);
-  padding: 20px;
+  padding: 14px 18px 10px;
   margin: 20px;
   border-top: 3px solid ${(props) => props.topColor || "hsl(180deg 56% 52%)"};
 `;
